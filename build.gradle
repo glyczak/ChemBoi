@@ -1,0 +1,29 @@
+group 'ga.gaba'
+version '1.0-SNAPSHOT'
+
+plugins {
+    id'java'
+    id'application'
+    id'com.github.johnrengelman.shadow' version '2.0.1'
+}
+
+mainClassName = 'ga.gaba.ChemBoi.Bot'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.3'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "net.dv8tion:JDA:3.5.1_339"
+}
